@@ -2,10 +2,10 @@ package lessons.welcome.array.occurenceofvalue;
 
 import java.util.Random;
 
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class OccurrenceOfValue extends BatExercise {
 
@@ -55,6 +55,14 @@ public class OccurrenceOfValue extends BatExercise {
 				"    if nums[i] == lookingFor:\n" +
 				"      count += 1\n" +
 				"  return count\n");
+		templateScala("occurrences", new String[]{"Array[Int]","Int"},
+				"def occurrences(nums:Array[Int],lookingFor:Int):Int = {\n",
+				"  var count = 0\n" +
+				"  for (i <- 0 to nums.length-1)\n" +
+				"    if (nums(i) == lookingFor)\n" +
+				"      count += 1\n" +
+				"  return count\n"+
+				"}");
 
 		setup(myWorld);
 	}

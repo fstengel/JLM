@@ -1,8 +1,8 @@
 package lessons.welcome.array.array123;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class Array123 extends BatExercise {
 	public Array123(Lesson lesson) {
@@ -26,6 +26,13 @@ public class Array123 extends BatExercise {
 				"    if nums[i]==1  and  nums[i+1]==2  and  nums[i+2]==3:\n"+
 				"      return True\n"+
 				"  return False\n");
+		templateScala("array123", new String[] {"Array[Int]"}, 
+				"def array123(nums:Array[Int]): Boolean = {\n",
+				"  for (i <- 0 to nums.length-3)\n" +
+				"    if (nums(i)==1  &&  nums(i+1)==2  &&  nums(i+2)==3)\n"+
+				"      return true\n"+
+				"  return false\n"+
+				"}");
 		setup(myWorld);
 	}
 

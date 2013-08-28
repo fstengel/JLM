@@ -2,10 +2,10 @@ package lessons.welcome.array.indexof.maxvalue;
 
 import java.util.Random;
 
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class IndexOfMaxValue extends BatExercise {
 
@@ -35,6 +35,17 @@ public class IndexOfMaxValue extends BatExercise {
 				"      max = nums[i]\n" +
 				"      maxIdx = i\n"+
 				"  return maxIdx\n");
+		templateScala("indexOfMaxValue", new String[]{"Array[Int]"},
+				"def indexOfMaxValue(nums:Array[Int]):Int = {\n",
+				"  var max=nums(0)\n" +
+				"  var maxIdx = 0\n" +
+				"  for (i <- 0 to nums.length-1)\n" +
+				"    if (nums(i)>max) {\n"+
+				"      max = nums(i)\n" +
+				"      maxIdx = i\n"+
+				"    }\n"+
+				"  return maxIdx\n"+
+				"}");
 
 		setup(myWorld);
 	}

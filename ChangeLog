@@ -1,7 +1,18 @@
-20130815:
+20130830:
+  * Rebrand JLM into PLM (Programmer's Learning Machine)
+  * Turtles: Allow for hints on segment sizes
+  * New lesson turtleart on the classical Logo geometric figures
+  * Turtle.circle(): New primitive to draw circles directly.
+  * Upgrade our twitter4j dependency to use the new twitter API 1.1
+    Twitter dropped support for the 1.0 API a while ago.
+  * Drop the identi.ca spy. It does not work since the upstream move
+    from status.net to pump.io, and I fail fixing it.
+20130820:
+  * RELEASE 2.1, the 100th day.
   * Introduce Scala as a new programing language (version 2.10+ required)
+  * Port all exercises to scala.
   * Change turnLeft()/turnRight() to left()/right() in buggles & turtles
-  * Translate all builtins of buggles and turtles to French:
+  * Translate all builtins of buggles, turtles and sorts to French:
     It is now possible to write avance() instead of forward()
   * Review all translations for uniformity and to iron out some typos
   * Test the compilation process in our JUnit tests, for Java and Scala.
@@ -9,7 +20,6 @@
   * Allow [!java]...[/!] constructs in mission texts to adapt to progLang
   * In debug mode, all adaptations of all progLangs are displayed, with
     a color code for each. This was mandatory with a third main progLang
-  * Port some exercises of the welcome lesson to scala.
   * Partially document the black magic fueling ExerciseTemplatingEntity 
     Erk, this class is based on ... inventive hacks ;)
   * Property jlm.display.fontsize sets the size of the mission texts
@@ -21,6 +31,8 @@
     process, when we don't have methods parameters yet
   * lessons/welcome/methods/flowerpot/*: two new exercises training on
     methods (and decomposition)
+  * New lib/jsyntaxpane.jar, from debian package fixing some upstream bugs
+    - Contextual menu now works, as well as Ctrl-Z/Ctrl-Y, etc
 20130804:
   * RELEASE 2.0, the revolutionary night.
   * Remove the array world. It was not helping very much when compared

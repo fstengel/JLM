@@ -1,25 +1,23 @@
 package lessons.maze.pledge;
 
-import jlm.universe.Direction;
+import plm.core.model.Game;
+import plm.universe.Direction;
 
-public class PledgeMazeEntity extends jlm.universe.bugglequest.SimpleBuggle {
+public class PledgeMazeEntity extends plm.universe.bugglequest.SimpleBuggle {
 	@Override
 	public void setX(int i)  {
 		if (isInited())
-			throw new RuntimeException("setX(int) forbidden in this exercise");
-		super.setX(i);
+			throw new RuntimeException(Game.i18n.tr("I'm sorry Dave, I'm affraid I can't let you use setX() in this exercise."));
 	}
 	@Override
 	public void setY(int i)  { 
 		if (isInited())
-			throw new RuntimeException("setY(int) forbidden in this exercise");
-		super.setY(i);
+			throw new RuntimeException(Game.i18n.tr("I'm sorry Dave, I'm affraid I can't let you use setY() in this exercise."));
 	}
 	@Override
 	public void setPos(int i,int j)  { 
 		if (isInited())
-			throw new RuntimeException("setPos(int,int) forbidden in this exercise");
-		super.setPos(i,j);
+			throw new RuntimeException(Game.i18n.tr("I'm sorry Dave, I'm affraid I can't let you use setPos() in this exercise."));
 	}
 
 	/* BEGIN TEMPLATE */

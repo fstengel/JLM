@@ -1,35 +1,27 @@
 package lessons.maze.wallfollower;
 
-import jlm.universe.Direction;
+import plm.core.model.Game;
+import plm.universe.Direction;
 
 @SuppressWarnings("unused")
-public class WallFollowerMazeEntity extends jlm.universe.bugglequest.SimpleBuggle {
+public class WallFollowerMazeEntity extends plm.universe.bugglequest.SimpleBuggle {
 	private Direction uselessVariableExistingJustToMakeSureThatEclipseWontRemoveTheImport; /* If removed, user code can't use directions easily */
-
 	@Override
 	public void setX(int i)  {
-		if (isInited()) 
-			throw new RuntimeException("setX(int) forbidden in this exercise");
-		super.setX(i);
+		if (isInited())
+			throw new RuntimeException(Game.i18n.tr("I'm sorry Dave, I'm affraid I can't let you use setX() in this exercise."));
 	}
 	@Override
 	public void setY(int i)  { 
 		if (isInited())
-			throw new RuntimeException("setY(int) forbidden in this exercise");
-		super.setY(i);
+			throw new RuntimeException(Game.i18n.tr("I'm sorry Dave, I'm affraid I can't let you use setY() in this exercise."));
 	}
 	@Override
 	public void setPos(int i,int j)  { 
 		if (isInited())
-			throw new RuntimeException("setPos(int,int) forbidden in this exercise");
-		super.setPos(i, j);
+			throw new RuntimeException(Game.i18n.tr("I'm sorry Dave, I'm affraid I can't let you use setPos() in this exercise."));
 	}
-	/*	// Stop moving if stepping over a baggle; commented because overriding forward is beyond the object know how of the students at this point 
-	public void forward() {
-	    if (!isOverBaggle()) 
-	      super.forward();
-	}
-	 */
+	 
 	/* BEGIN TEMPLATE */
 	/* BEGIN SOLUTION */
 	public void stepHandOnWall() {

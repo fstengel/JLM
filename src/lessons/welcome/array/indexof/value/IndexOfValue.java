@@ -2,10 +2,10 @@ package lessons.welcome.array.indexof.value;
 
 import java.util.Random;
 
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class IndexOfValue extends BatExercise {
 
@@ -46,12 +46,19 @@ public class IndexOfValue extends BatExercise {
 		myWorld.addTest(INVISIBLE, tab4, r.nextInt(35)-15);
 		myWorld.addTest(INVISIBLE, tab4, getIndex(tab4));
 
-		templatePython("indexOfValue", 
+		templatePython("indexOfMaxValue", 
 				"def indexOfMaxValue(nums,val):\n",
 				"  for i in range(len(nums)):\n" +
 				"    if nums[i]==val:\n"+
 				"      return i\n" +
 				"  return -1\n");
+		templateScala("indexOfMaxValue", new String[] {"Array[Int]","Int"}, 
+				"def indexOfMaxValue(nums:Array[Int] ,value:Int): Int = {\n",
+				"  for (i <- 0 to nums.length-1)\n" +
+				"    if (nums(i)==value) \n"+
+				"      return i\n" +
+				"  return -1\n"+
+				"}");
 		
 		setup(myWorld);
 	}

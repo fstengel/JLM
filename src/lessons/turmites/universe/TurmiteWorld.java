@@ -7,15 +7,15 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 import javax.swing.ImageIcon;
 
-import jlm.core.model.Game;
-import jlm.core.model.ProgrammingLanguage;
-import jlm.core.ui.ResourcesCache;
-import jlm.universe.BrokenWorldFileException;
-import jlm.universe.Direction;
-import jlm.universe.World;
-import jlm.universe.bugglequest.Buggle;
-import jlm.universe.bugglequest.BuggleWorld;
-import jlm.universe.bugglequest.ui.BuggleWorldView;
+import plm.core.model.Game;
+import plm.core.model.ProgrammingLanguage;
+import plm.core.ui.ResourcesCache;
+import plm.universe.BrokenWorldFileException;
+import plm.universe.Direction;
+import plm.universe.World;
+import plm.universe.bugglequest.Buggle;
+import plm.universe.bugglequest.BuggleWorld;
+import plm.universe.bugglequest.ui.BuggleWorldView;
 
 public class TurmiteWorld extends BuggleWorld {	
 	/** A copy constructor (mandatory for the internal compilation mechanism to work)
@@ -48,7 +48,7 @@ public class TurmiteWorld extends BuggleWorld {
 	
 	/** Reset the state of the current world to the one passed in argument
 	 * 
-	 * This is mandatory for the JLM good working. Even if the prototype says that the passed object can be 
+	 * This is mandatory for the PLM good working. Even if the prototype says that the passed object can be 
 	 * any kind of world, you can be sure that it's of the same type than the current world. So, there is 
 	 * no need to check before casting your argument.
 	 * 
@@ -114,7 +114,11 @@ public class TurmiteWorld extends BuggleWorld {
 			engine.put("daWorld", this);
 			engine.eval(
 					"def stepDone():\n"+
-					"	daWorld.stepDone()\n");
+					"	daWorld.stepDone()\n"+
+					/* BINDINGS TRANSLATION: French */
+					"def pasFait():\n"+
+					"	daWorld.stepDone()\n"
+					);
 		}
 	}
 	

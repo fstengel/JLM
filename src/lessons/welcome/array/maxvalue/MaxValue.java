@@ -2,10 +2,10 @@ package lessons.welcome.array.maxvalue;
 
 import java.util.Random;
 
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class MaxValue extends BatExercise {
 
@@ -43,6 +43,14 @@ public class MaxValue extends BatExercise {
 				"    if nums[i] > max:\n"+
 				"      max = nums[i]\n"+
 				"  return max\n");
+		templateScala("maxValue",new String[] {"Array[Int]"}, 
+				"def maxValue(nums:Array[Int]): Int = {\n",
+				"  var max=nums(0)\n"+
+				"  for (i <- 0 to nums.length-1)\n"+
+				"    if (nums(i) > max)\n"+
+				"      max = nums(i)\n"+
+				"  return max\n"+
+				"}");
 
 		setup(myWorld);
 	}

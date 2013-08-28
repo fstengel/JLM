@@ -1,8 +1,8 @@
 package lessons.sort.shell;
 
-import jlm.universe.sort.SortingEntity;
+import plm.universe.sort.SortingEntity;
 
-/* Variante with precalculated gap:
+/* Variant with precomputed gap:
  *
  *	int [] gap = {1, 4, 10, 23, 57, 132, 301, 701, 1750};
  *	int h = 0;
@@ -16,7 +16,7 @@ import jlm.universe.sort.SortingEntity;
 public class AlgShellSortEntity extends SortingEntity {
 
 	public void run() {
-		this.shellSort();
+		shellSort();
 	}
 
 	/* BEGIN TEMPLATE */

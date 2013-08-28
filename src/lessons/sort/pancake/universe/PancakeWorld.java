@@ -4,12 +4,12 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 import javax.swing.ImageIcon;
 
-import jlm.core.model.Game;
-import jlm.core.model.ProgrammingLanguage;
-import jlm.core.ui.ResourcesCache;
-import jlm.core.ui.WorldView;
-import jlm.universe.EntityControlPanel;
-import jlm.universe.World;
+import plm.core.model.Game;
+import plm.core.model.ProgrammingLanguage;
+import plm.core.ui.ResourcesCache;
+import plm.core.ui.WorldView;
+import plm.universe.EntityControlPanel;
+import plm.universe.World;
 
 public class PancakeWorld extends World {
 
@@ -169,7 +169,16 @@ public class PancakeWorld extends World {
 				"def isPancakeUpsideDown(pancakeNumber):\n"+
 				"  return entity.isPancakeUpsideDown(pancakeNumber)\n" +
 				"def flip(numberOfPancakes):\n" +
-				"  entity.flip(numberOfPancakes)\n"	
+				"  entity.flip(numberOfPancakes)\n"	+
+				/* BINDINGS TRANSLATION: French */
+				"def getTaillePile():\n"+
+				"  return getStackSize()\n"+
+				"def getRayonCrepe(rank):\n"+
+				"  return getPancakeRadius(rank)\n"+
+				"def estCrepeRetournee(rank):\n"+
+				"  return isPancakeUpsideDown(rank)\n"+
+				"def retourne(nb):\n"+
+				"  return flip(nb)\n"
 				);
 		} else {
 			throw new RuntimeException("No binding of PancakeWorld for "+lang);

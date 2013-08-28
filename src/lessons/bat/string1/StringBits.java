@@ -1,8 +1,8 @@
 package lessons.bat.string1;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class StringBits extends BatExercise {
 	public StringBits(Lesson lesson) {
@@ -21,6 +21,13 @@ public class StringBits extends BatExercise {
 				"  for i in range(0,len(str),2):\n" +
 				"    res += str[i:i+1]\n" +
 				"  return res\n");
+		templateScala("stringBits",new String[] {"String"}, 
+				"def stringBits(str:String):String = {\n",
+				"  var res:String = \"\"\n" +
+				"  for (i <- 0 to str.length-1 by 2)\n" +
+				"    res += str.substring(i,i+1)\n" +
+				"  return res\n"+
+				"}");
 		setup(myWorld);
 	}
 

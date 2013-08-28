@@ -6,12 +6,12 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 import javax.swing.ImageIcon;
 
-import jlm.core.model.Game;
-import jlm.core.model.ProgrammingLanguage;
-import jlm.core.ui.ResourcesCache;
-import jlm.core.ui.WorldView;
-import jlm.universe.EntityControlPanel;
-import jlm.universe.World;
+import plm.core.model.Game;
+import plm.core.model.ProgrammingLanguage;
+import plm.core.ui.ResourcesCache;
+import plm.core.ui.WorldView;
+import plm.universe.EntityControlPanel;
+import plm.universe.World;
 
 /* BEGIN TEMPLATE */
 public class HanoiWorld extends World {	
@@ -49,7 +49,7 @@ public class HanoiWorld extends World {
 	
 	/** Reset the state of the current world to the one passed in argument
 	 * 
-	 * This is mandatory for the JLM good working. Even if the prototype says that the passed object can be 
+	 * This is mandatory for the PLM good working. Even if the prototype says that the passed object can be 
 	 * any kind of world, you can be sure that it's of the same type than the current world. So, there is 
 	 * no need to check before casting your argument.
 	 * 
@@ -154,6 +154,11 @@ public class HanoiWorld extends World {
 			e.eval( "def move(src,dst):\n"+
 					"  entity.move(src,dst)\n"+
 					"def getSlotSize(slot):\n"+
+					"  return entity.getSlotSize(slot)\n"+
+					/* BINDINGS TRANSLATION: French */
+					"def deplace(src,dst):\n"+
+					"  entity.move(src,dst)\n"+
+					"def getTaillePiquet(slot):\n"+
 					"  return entity.getSlotSize(slot)\n");
 		} else {
 			throw new RuntimeException("No binding of HanoiWorld for "+lang);

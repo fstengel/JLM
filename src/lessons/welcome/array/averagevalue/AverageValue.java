@@ -2,10 +2,10 @@ package lessons.welcome.array.averagevalue;
 
 import java.util.Random;
 
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class AverageValue extends BatExercise {
 
@@ -36,6 +36,13 @@ public class AverageValue extends BatExercise {
 				"  for i in range(len(nums)):\n" +
 				"    total += nums[i]\n"+
 				"  return total / len(nums)\n");
+		templateScala("averageValue",new String[] {"Array[Int]"}, 
+				"def averageValue(nums:Array[Int]): Int = {\n",
+				"  var total = 0\n"+
+				"  for (i <- 0 to nums.length -1) \n" +
+				"    total += nums(i)\n"+
+				"  return total / nums.length\n"+
+				"}");
 		setup(myWorld);		
 	}
 	

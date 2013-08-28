@@ -1,7 +1,7 @@
 package lessons.sort.pancake.universe;
 
-import jlm.universe.Entity;
-import jlm.universe.World;
+import plm.universe.Entity;
+import plm.universe.World;
 
 public class PancakeEntity extends Entity {
 
@@ -26,7 +26,7 @@ public class PancakeEntity extends Entity {
 	}
 	
 	/** 
-	 * A copy method needed by the JLM
+	 * A copy method needed by the PLM
 	 * @return a new PancakeEntity with the same name as the caller
 	 */
 	@Override
@@ -82,4 +82,12 @@ public class PancakeEntity extends Entity {
 	public String toString(){
 		return "PancakeEntity (" + this.getClass().getName() + ")";
 	}
+	
+	/* BINDINGS TRANSLATION: French */
+	public void retourne(int numberOfPancakes) { flip(numberOfPancakes); }
+	public int getRayonCrepe(int rank) { return getPancakeRadius(rank); }
+	public int getTaillePile() { return getStackSize(); }
+	public boolean estCrepeRetournee(int rank) { return isPancakeUpsideDown(rank); }
+	public boolean estTriee() { return isSorted(); }
+	public boolean estChoisi() { return isSelected(); }
 }

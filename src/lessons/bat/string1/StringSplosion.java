@@ -1,8 +1,8 @@
 package lessons.bat.string1;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class StringSplosion extends BatExercise {
 	public StringSplosion(Lesson lesson) {
@@ -23,6 +23,13 @@ public class StringSplosion extends BatExercise {
 				"  for i in range(len(str)):\n" +
 				"    res += str[0:i+1]\n" +
 				"  return res\n");
+		templateScala("stringSplosion",new String[]{"String"}, 
+				"def stringSplosion(str:String):String = {\n",
+				"  var res = \"\"\n" +
+				"  for (i <- 0 to str.length-1) \n" +
+				"    res ++= str.substring(0,i+1)\n" +
+				"  return res\n"+
+				"}");
 		setup(myWorld);
 	}
 

@@ -1,8 +1,8 @@
 package lessons.welcome.array.arrayfront9;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class ArrayFront9 extends BatExercise {
 	public ArrayFront9(Lesson lesson) {
@@ -28,6 +28,13 @@ public class ArrayFront9 extends BatExercise {
 				"    if nums[i] == 9:\n" +
 				"      return True\n" +
 				"  return False\n");
+		templateScala("arrayFront9", new String[]{"Array[Int]"},
+				"def arrayFront9(nums:Array[Int]): Boolean = {\n",
+				"  for (i <- 0 to Math.min(nums.length,4)-1)\n"+
+				"    if (nums(i) == 9)\n" +
+				"      return true\n" +
+				"  return false\n"+
+				"}");
 
 		setup(myWorld);
 	}

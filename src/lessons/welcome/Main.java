@@ -2,15 +2,15 @@ package lessons.welcome;
 
 import java.io.IOException;
 
-import jlm.core.model.lesson.Lecture;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.BrokenWorldFileException;
+import plm.core.model.lesson.Lecture;
+import plm.core.model.lesson.Lesson;
+import plm.universe.BrokenWorldFileException;
 import lessons.welcome.array.array123.Array123;
 import lessons.welcome.array.array667.Array667;
 import lessons.welcome.array.arraycount9.ArrayCount9;
 import lessons.welcome.array.arrayfront9.ArrayFront9;
 import lessons.welcome.array.averagevalue.AverageValue;
-import lessons.welcome.array.basics.Array;
+import lessons.welcome.array.basics.Array1;
 import lessons.welcome.array.basics.Array2;
 import lessons.welcome.array.has271.Has271;
 import lessons.welcome.array.indexof.maxvalue.IndexOfMaxValue;
@@ -189,7 +189,7 @@ public class Main extends Lesson {
 
 		  
 		// arrays exercises 
-		Lecture arrays = addExercise(new Array(this));
+		Lecture arrays = addExercise(new Array1(this));
 		addExercise(new Array2(this),arrays);
 		addExercise(new IndexOfValue(this),arrays);
 		addExercise(new OccurrenceOfValue(this),arrays);

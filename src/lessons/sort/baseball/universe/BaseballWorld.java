@@ -6,16 +6,16 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 import javax.swing.ImageIcon;
 
-import jlm.core.model.Game;
-import jlm.core.model.ProgrammingLanguage;
-import jlm.core.ui.ResourcesCache;
-import jlm.core.ui.WorldView;
-import jlm.core.utils.FileUtils;
-import jlm.universe.EntityControlPanel;
-import jlm.universe.World;
-
 import org.xnap.commons.i18n.I18n;
 import org.xnap.commons.i18n.I18nFactory;
+
+import plm.core.model.Game;
+import plm.core.model.ProgrammingLanguage;
+import plm.core.ui.ResourcesCache;
+import plm.core.ui.WorldView;
+import plm.core.utils.FileUtils;
+import plm.universe.EntityControlPanel;
+import plm.universe.World;
 
 public class BaseballWorld extends World {
 	public static final int MIX_SORTED = 0;
@@ -33,10 +33,10 @@ public class BaseballWorld extends World {
 	private Vector<BaseballMove> moves = new Vector<BaseballMove>(); // all moves made on the field -- used for graphical purpose only
 	private I18n i18n;
 
-	/** Copy constructor used internally by JLM */
+	/** Copy constructor used internally by PLM */
 	public BaseballWorld(BaseballWorld other) {
 		super(other);
-		i18n = I18nFactory.getI18n(getClass(),"org.jlm.i18n.Messages",FileUtils.getLocale(), I18nFactory.FALLBACK);
+		i18n = I18nFactory.getI18n(getClass(),"org.plm.i18n.Messages",FileUtils.getLocale(), I18nFactory.FALLBACK);
 		initialField = new int[other.initialField.length];
 		for (int i=0;i<initialField.length;i++)
 			initialField[i] = other.initialField[i];
@@ -50,7 +50,7 @@ public class BaseballWorld extends World {
 
 	public BaseballWorld(String name, int baseAmount, int posAmount, int mix) {
 		super(name);
-		i18n = I18nFactory.getI18n(getClass(),"org.jlm.i18n.Messages",FileUtils.getLocale(), I18nFactory.FALLBACK);
+		i18n = I18nFactory.getI18n(getClass(),"org.plm.i18n.Messages",FileUtils.getLocale(), I18nFactory.FALLBACK);
 
 		// create the bases
 		this.baseAmount = baseAmount;
@@ -202,6 +202,26 @@ public class BaseballWorld extends World {
 					"  return entity.getPlayerColor(base,pos)\n" +
 					"def move(base,pos):\n" +
 					"  entity.move(base,pos)\n" +
+					/* BINDINGS TRANSLATION: French */
+					"def getNombreBases():\n" +
+					"  return entitygetBasesAmount()\n" +
+					"def getNombrePositions():\n" +
+					"  return entity.getPositionsAmount()\n" +
+					"def getTrouBase():\n" +
+					"  return entity.getHoleBase()\n" +
+					"def getTrouPosition():\n" +
+					"  return entity.getHolePosition()\n" +
+					"def estTrie():\n" +
+					"  return entity.isSorted()\n" +
+					"def estBaseTriee():\n" +
+					"  return entity.isBaseSorted()\n" +
+					"def getCouleurJoueur(base,pos):\n" +
+					"  return entity.getPlayerColor(base,pos)\n" +
+					"def deplace(base,pos):\n" +
+					"  (base,pos)\n" +
+					"def estSelectionne():\n"+
+					"  return isSelected()\n"+
+
 					""
 					);
 		} else {

@@ -1,8 +1,8 @@
 package lessons.welcome.array.arraycount9;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class ArrayCount9 extends BatExercise {
 	public ArrayCount9(Lesson lesson) {
@@ -24,6 +24,14 @@ public class ArrayCount9 extends BatExercise {
 				"    if value == 9:\n" +
 				"      res += 1\n" +
 				"  return res\n");
+		templateScala("arrayCount9", new String[]{"Array[Int]"},
+				"def arrayCount9(nums:Array[Int]): Int = {\n",
+				"  var res = 0\n" +
+				"  for (value <- nums)\n" +
+				"    if (value == 9)\n" +
+				"      res += 1\n" +
+				"  return res\n"+
+				"}");
 		setup(myWorld);
 	}
 

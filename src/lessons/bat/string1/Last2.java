@@ -1,8 +1,8 @@
 package lessons.bat.string1;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class Last2 extends BatExercise {
 	public Last2(Lesson lesson) {
@@ -33,6 +33,18 @@ public class Last2 extends BatExercise {
 				"    if str[i:i+2] == end:\n" +
 				"      count += 1\n" +
 				"  return count\n");
+		templateScala("last2", new String[]{"String"},
+				"def last2(str:String):Int = {\n",
+				"  val l = str.length\n" +
+				"  if (l < 2)\n" +
+				"    return 0\n" +
+				"  val end = str.substring(l-2,l)\n" +
+				"  var count = 0\n" +
+				"  for (i <- 0 to str.length-3)\n" +
+				"    if (str.substring(i,i+2) == end)\n" +
+				"      count += 1\n" +
+				"  return count\n"+
+				"}");
 		setup(myWorld);
 	}
 

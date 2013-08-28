@@ -1,8 +1,8 @@
 package lessons.bat.string1;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class StringTimes extends BatExercise {
 	public StringTimes(Lesson lesson) {
@@ -25,6 +25,13 @@ public class StringTimes extends BatExercise {
 				"  for i in range(n):\n"+
 				"    res += str\n"+
 				"  return res\n");
+		templateScala("stringTimes", new String[]{"String","Int"}, 
+				"def stringTimes(str:String, n:Int):String = {\n",
+				"  var res = \"\"\n"+
+				"  for (i <- 1 to n)\n"+
+				"    res ++= str\n"+
+				"  return res\n"+
+				"}");
 		setup(myWorld);
 	}
 

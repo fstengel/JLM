@@ -1,8 +1,8 @@
 package lessons.bat.string1;
-import jlm.core.model.lesson.Lesson;
-import jlm.universe.bat.BatExercise;
-import jlm.universe.bat.BatTest;
-import jlm.universe.bat.BatWorld;
+import plm.core.model.lesson.Lesson;
+import plm.universe.bat.BatExercise;
+import plm.universe.bat.BatTest;
+import plm.universe.bat.BatWorld;
 
 public class AltPairs extends BatExercise {
 	public AltPairs(Lesson lesson) {
@@ -24,6 +24,13 @@ public class AltPairs extends BatExercise {
 				"  for i in range(0,len(str),4):\n" +
 				"    res += str[i:i+2]\n" +
 				"  return res\n");
+		templateScala("altPairs",new String[]{"String"}, 
+				"def altPairs(str:String):String={\n",
+				"  var res = \"\"\n" +
+				"  for (i <- 0 to (str.length-1) by 4)\n" +
+				"    res ++= str.substring(i, Math.min(i+2,str.length))\n" +
+				"  return res\n"+
+				"}\n");
 		setup(myWorld);
 	}
 
